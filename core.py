@@ -9,7 +9,9 @@ class CinemaParser:
         content = BeautifulSoup(resp.text, 'lxml')
     def print_raw_content(self, content):
         return (extract_raw_content(self, content).prettify())
-
+    def  get_films_list():
+        soup = self.extract_raw_content()
+        soup.find("span", id="mylist", )
 
 
 spb_parser = CinemaParser('spb')
