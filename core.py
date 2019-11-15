@@ -18,16 +18,21 @@ class CinemaParser:
             titles.append(film["attr-title"])
         return titles
     def get_film_nearest_session(self, film_name):
+        if not self.content:
+            self.extract_raw_content()
         url = "https://spb.subscity.ru"
         self.extract_raw_content()
-        href = ''
         films = self.content.find_all("div", {"class" : "movie-plate"})
         for film in films:
-            if film == film_name:
-                title = films.find_all("div", {"class" : "movie-title"})
-                a = title.find_all("a", {"class" : "underdashed"})
-                href = a["href"] + url
-                return href
+            
+            if film["attr-title"] == film_name:
+                title = film.find("div", {"class" : "movie-title"})
+                print(title)
+                a = title.find("a", {"class" : "underdashed"})
+                print(a.prettify())
+                href = a["href"]
+                print(url+href)
+        return url
 
 
 spb_parser = CinemaParser('spb')
