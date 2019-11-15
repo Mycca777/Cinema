@@ -3,11 +3,11 @@ from bs4 import BeautifulSoup
 class CinemaParser:
     def __init__(self, city):
         self.city = city
-    def extract_raw_content(self, content):
-        content = self.content
+    def extract_raw_content(self):
         resp = req.get("https://spb.subscity.ru")
-        content = BeautifulSoup(resp.text, 'lxml')
-    def print_raw_content(self, content):
+        content = BeautifulSoup(resp.text, 'html.parser')
+    def print_raw_content(self):
+        self.extract_raw_content()
         return (extract_raw_content(self, content).prettify())
     def  get_films_list():
         soup = self.extract_raw_content()
