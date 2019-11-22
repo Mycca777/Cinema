@@ -1,4 +1,4 @@
-from cinemaparse import CinemaParse
+from cinemaparse import CinemaParser
 spb_parser = CinemaParser('spb')
 #spb_parser.print_raw_content()
 print(spb_parser.get_films_list())
