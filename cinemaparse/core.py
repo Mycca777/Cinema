@@ -34,10 +34,10 @@ class CinemaParser:
                 print(url+href)
         return url
 
-
-spb_parser = CinemaParser('spb')
-#spb_parser.print_raw_content()
-print(spb_parser.get_films_list())
-msk_parser = CinemaParser('msk')
-print(spb_parser.get_film_nearest_session('Джокер'))
-#print(another_msk_parser = CinemaParser('msk'))
+if __name__ == "__main__"
+    spb_parser = CinemaParser('spb')
+    #spb_parser.print_raw_content()
+    print(spb_parser.get_films_list())
+    msk_parser = CinemaParser('msk')
+    print(spb_parser.get_film_nearest_session('Джокер'))
+    #print(another_msk_parser = CinemaParser('msk'))
